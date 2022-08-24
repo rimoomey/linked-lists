@@ -11,7 +11,13 @@ class LinkedList
   end
 
   def prepend(value)
-    @head = Node.new.value = value if @size.zero?
+    new_head = Node.new(value)
+    new_head.next_node = @head
+    @head = new_head
 
+    @tail = @head if size.zero?
+
+    @size += 1
+    nil
   end
 end
