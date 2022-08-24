@@ -10,6 +10,8 @@ class LinkedList
     @size = 0
   end
 
+  def append(_value); end
+
   def prepend(value)
     new_head = Node.new(value)
     new_head.next_node = @head
