@@ -70,6 +70,16 @@ class LinkedList
     node_to_pop
   end
 
+  def contains?(value)
+    current = @head
+    until current.nil?
+      return true if current.value == value
+
+      current = current.next_node
+    end
+    false
+  end
+
   def to_s
     str = ''
     current = @head
@@ -91,9 +101,7 @@ puts l.size
 puts l.tail.value
 p l.at(2).value
 p l.at(1).value
-l.pop
-puts l
-l.pop
-puts l
-l.pop
-puts l
+p l.contains?(5)
+p l.contains?(1)
+p l.contains?(0)
+p l.contains?(4)
