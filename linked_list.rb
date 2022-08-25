@@ -26,7 +26,7 @@ class LinkedList
       str += "(#{current.value}) => "
       current = current.next_node
     end
-    str += 'nil'
+    str << 'nil'
   end
 end
 
