@@ -145,31 +145,3 @@ class LinkedList
     str << 'nil'
   end
 end
-
-l = LinkedList.new
-l.prepend(0)
-l.prepend(1)
-puts l
-l.append(5)
-puts l
-puts l.size
-puts l.tail.value
-p l.at(2).value
-p l.at(1).value
-p l.contains?(5)
-p l.contains?(1)
-p l.contains?(0)
-p l.contains?(4)
-
-p l.find(0)
-p l.find(5)
-
-l.insert_at(2, 3)
-puts l
-
-l.remove_at(2)
-l.remove_at(2)
-l.remove_at(2)
-l.remove_at(1)
-l.remove_at(0)
-puts l
