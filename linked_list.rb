@@ -35,6 +35,18 @@ class LinkedList
     current
   end
 
+  def at(index)
+    current_index = 0
+    current_node = @head
+    while current_index < index
+      return 'Index out of bounds' if current_index >= @size
+
+      current_node = current_node.next_node
+      current_index += 1
+    end
+    current_node
+  end
+
   def to_s
     str = ''
     current = @head
@@ -54,3 +66,5 @@ l.append(5)
 puts l
 puts l.size
 puts l.tail.value
+p l.at(2).value
+p l.at(1).value
