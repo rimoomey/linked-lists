@@ -116,6 +116,25 @@ class LinkedList
     nil
   end
 
+  def remove_at(index)
+    if index.zero?
+      @head = @head.next_node
+      return nil
+    end
+
+    current = @head
+    current_index = 0
+    while current_index < index - 1
+      current = current.next_node
+      current_index += 1
+    end
+
+    node_to_delete = current.next_node
+    current.next_node = node_to_delete.nil? ? nil : node_to_delete.next_node
+
+    nil
+  end
+
   def to_s
     str = ''
     current = @head
@@ -146,4 +165,11 @@ p l.find(0)
 p l.find(5)
 
 l.insert_at(2, 3)
+puts l
+
+l.remove_at(2)
+l.remove_at(2)
+l.remove_at(2)
+l.remove_at(1)
+l.remove_at(0)
 puts l
