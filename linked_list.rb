@@ -29,6 +29,12 @@ class LinkedList
     nil
   end
 
+  def tail
+    current = @head
+    current = current.next_node until current.next_node.nil?
+    current
+  end
+
   def to_s
     str = ''
     current = @head
@@ -46,3 +52,5 @@ l.prepend(1)
 puts l
 l.append(5)
 puts l
+puts l.size
+puts l.tail.value
