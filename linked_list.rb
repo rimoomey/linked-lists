@@ -80,6 +80,18 @@ class LinkedList
     false
   end
 
+  def find(value)
+    current = @head
+    current_index = 0
+    until current.nil?
+      return current_index if current.value == value
+
+      current = current.next_node
+      current_index += 1
+    end
+    nil
+  end
+
   def to_s
     str = ''
     current = @head
@@ -105,3 +117,6 @@ p l.contains?(5)
 p l.contains?(1)
 p l.contains?(0)
 p l.contains?(4)
+
+p l.find(0)
+p l.find(5)
