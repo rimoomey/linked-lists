@@ -4,7 +4,7 @@ require_relative 'node'
 
 # Linked List implementation for ruby
 class LinkedList
-  attr_reader :head, :tail, :size
+  attr_reader :head, :size
 
   def initialize
     @size = 0
