@@ -53,6 +53,7 @@ class LinkedList
     if @size == 1
       node_to_pop = @head
       @head = nil
+      @size = 0
       return node_to_pop
     end
 
