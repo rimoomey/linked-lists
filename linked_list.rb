@@ -14,8 +14,9 @@ class LinkedList
     new_tail = Node.new(value)
     current = @head
     current = current.next_node until current.next_node.nil?
-
     current.next_node = new_tail
+
+    @size += 1
     nil
   end
 
