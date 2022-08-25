@@ -18,9 +18,19 @@ class LinkedList
     @size += 1
     nil
   end
+
+  def to_s
+    str = ''
+    current = @head
+    until current.nil?
+      str += "(#{current.value}) => "
+      current = current.next_node
+    end
+    str += 'nil'
+  end
 end
 
 l = LinkedList.new
-l.append(0)
-l.append(1)
-p l.tail
+l.prepend(0)
+l.prepend(1)
+puts l
