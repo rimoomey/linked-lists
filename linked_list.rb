@@ -15,8 +15,6 @@ class LinkedList
     new_head.next_node = @head
     @head = new_head
 
-    @tail = @head if size.zero?
-
     @size += 1
     nil
   end
