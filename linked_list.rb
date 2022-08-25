@@ -10,19 +10,6 @@ class LinkedList
     @size = 0
   end
 
-  def append(value)
-    new_tail = Node.new(value)
-    current_node = @head
-
-    current_node = current_node.next_node until current_node.next_node.nil?
-
-    current_node.next_node = new_tail
-    @tail = new_tail
-
-    @size += 1
-    nil
-  end
-
   def prepend(value)
     new_head = Node.new(value)
     new_head.next_node = @head
@@ -34,3 +21,8 @@ class LinkedList
     nil
   end
 end
+
+l = LinkedList.new
+l.append(0)
+l.append(1)
+p l.tail
