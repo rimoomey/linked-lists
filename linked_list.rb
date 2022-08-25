@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+# frozen_string_literal: false
 
 require_relative 'node'
 
@@ -47,6 +47,28 @@ class LinkedList
     current_node
   end
 
+  def pop
+    return if @size.zero?
+
+    if @size == 1
+      node_to_pop = @head
+      @head = nil
+      return node_to_pop
+    end
+
+    current_index = 0
+    current = @head
+    while current_index < @size - 2
+      current = current.next_node
+      current_index += 1
+    end
+    node_to_pop = current.next_node
+    current.next_node = nil
+    @size -= 1
+
+    node_to_pop
+  end
+
   def to_s
     str = ''
     current = @head
@@ -68,3 +90,9 @@ puts l.size
 puts l.tail.value
 p l.at(2).value
 p l.at(1).value
+l.pop
+puts l
+l.pop
+puts l
+l.pop
+puts l
