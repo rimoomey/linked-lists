@@ -92,6 +92,30 @@ class LinkedList
     nil
   end
 
+  def insert_at(value, index)
+    if index.zero?
+      temp = @head
+      @head = Node.new(value)
+      @head.next_node = temp
+
+      return nil
+    end
+
+    current = @head
+    current_index = 0
+    while current_index < index - 1
+      current = current.next_node
+      current_index += 1
+    end
+
+    node_to_insert = Node.new(value)
+    temp = current.next_node
+    current.next_node = node_to_insert
+    node_to_insert.next_node = temp
+
+    nil
+  end
+
   def to_s
     str = ''
     current = @head
@@ -120,3 +144,6 @@ p l.contains?(4)
 
 p l.find(0)
 p l.find(5)
+
+l.insert_at(2, 3)
+puts l
